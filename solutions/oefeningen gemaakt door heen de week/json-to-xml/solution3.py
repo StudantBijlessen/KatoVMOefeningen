@@ -1,7 +1,8 @@
 import json
+from collections import OrderedDict
 
-# Kan gevaarlijk zijn want insertion order wordt enkel behouden vanaf python 3.6
-student_grades = dict()
+# Heel zeker dat de insertion order hetzelfde gebleven is
+student_grades = OrderedDict()
 
 
 def write_grades(grades):
