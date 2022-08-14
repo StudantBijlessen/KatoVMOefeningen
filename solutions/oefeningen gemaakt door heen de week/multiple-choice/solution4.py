@@ -24,14 +24,11 @@ def main():
         for row in answers_csv_reader:
             name = row[0]
             answers = row[1:]
-            answers_dictionary[name] = {
-                "answers": answers,
-                "score": calculate_score(answers, solutions)
-            }
+            answers_dictionary[name] = calculate_score(answers, solutions)
 
     with open('output.txt', 'w+') as output_file:
         for person in answers_dictionary.items():
-            output_file.write(f"{person[0]} {person[1]['score']} \n")
+            output_file.write(f"{person[0]} {person[1]} \n")
 
 
 main()
